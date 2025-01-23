@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "turbo",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run turbo",
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      },
+      "sourceMapPathOverrides": {
+        "/turbopack/[project]/*": "${webRoot}/*"
+      }
+    },
+    {
+      "name": "Next.js: debug client-side",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3100",
+      "userDataDir": "${env:HOME}/.vscode-chrome-debug-profile",
+      "sourceMaps": true
+    },
+    
+  ]
+}
